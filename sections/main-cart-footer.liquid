@@ -1,0 +1,55 @@
+<div class="pt-8 pb-12 max-w-screen-md mx-auto px-4" data-ajax-cart-section>  
+  <div class="flex flex-col mb-10">
+    <h2 class="inline-block mb-3 text-base font-futurua-book text-slate-900">Summa</h2>
+    <div class="flex flex-row flex-nowrap justify-between mb-2">
+      <span class="font-fredoka-one text-slate-900">Produkter</span>
+      <span class="font-fredoka-one text-slate-900">{{ cart.total_price | money }}</span>
+    </div>
+    <div class="flex flex-row flex-nowrap justify-between {% if cart.cart_level_discount_applications.size > 0 %} pb-2 {% else %} border-b pb-4 mb-4 border-gray-200 {% endif %}">
+      <span class="font-fredoka-one text-slate-900">Frakt</span>
+      <span class="font-fredoka-one text-slate-900">
+        {% assign shipping_value = 15000 %}
+        {% assign cart_total = cart.total_price %}
+        {%- if cart_total > shipping_value -%}
+          0 kr
+        {%- else -%}
+          19 kr
+        {%- endif -%}
+      </span>
+    </div>
+    {% if cart.cart_level_discount_applications.size > 0 %}
+      <div class="flex flex-row flex-nowrap justify-between border-b pb-4 mb-4 border-gray-200">
+        <span class="font-fredoka-one text-rose-500">Rabatt
+        </span>
+        <span class="font-fredoka-one text-rose-500">
+          {{ cart.total_discount | money }}
+        </span>
+      </div>
+    {% endif %}
+    <div class="flex flex-row flex-nowrap justify-between mb-2">
+      <span class="font-fredoka-one text-slate-900">Totalt</span>
+      <span class="font-fredoka-one text-slate-900">
+        {%- if cart_total > shipping_value -%}
+          {{ cart.total_price | money }}
+        {%- else -%}
+          {% assign cart_totalt_with_freight = cart_total | plus: "1900" %}
+          {{ cart_totalt_with_freight | money }}
+        {%- endif -%}
+      </span>
+    </div>
+    <div class="flex flex-row flex-nowrap justify-between mb-2">
+      <span class="text-slate-900">Varav moms</span>
+      <span class="text-slate-900">
+        {% assign moms = cart_total | times: "0.2" | divided_by: "100" %}
+        {{ moms }} kr
+      </span>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4 flex-wrap">
+    <button type="submit" id="checkout" class="button primary text-center" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+      Till betalning
+    </button>
+  </div>
+  <div id="cart-errors"></div>
+</form>
+</div>

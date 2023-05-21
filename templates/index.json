@@ -1,0 +1,108 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/PRODUKTBILD_NY.png"
+      }
+    },
+    "usps": {
+      "type": "usps",
+      "settings": {
+      }
+    },
+    "features": {
+      "type": "features",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/BRUSTABLETTEN_NY1.webp",
+        "image_2": "shopify:\/\/shop_images\/FLASKAN.webp"
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+      }
+    },
+    "uses": {
+      "type": "uses",
+      "blocks": {
+        "cd85e9a6-3226-4179-9d0a-07438cb57ade": {
+          "type": "use",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MANDY_ANVANDNINGSOMRADEN_MORGONEN.png"
+          }
+        },
+        "080f9e1a-ee76-49ce-8314-4cef9a5fc528": {
+          "type": "use",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MANDY_ANVANDINGSOMARDEN_MOTET.png"
+          }
+        },
+        "2c022c0c-23d8-4f41-8ac2-1cc34777748f": {
+          "type": "use",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mandy_pa_bussen.png"
+          }
+        },
+        "b39d0da8-c2c9-4ae9-942d-1d657ebd7316": {
+          "type": "use",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mandy_pa_gymmet.png"
+          }
+        },
+        "621f604f-2568-4e96-8925-a74c4f258521": {
+          "type": "use",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mandy_pa_middag.png"
+          }
+        },
+        "9c996b19-7e4a-4180-ae27-3931d358d172": {
+          "type": "use",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mandy_nar_bakis.png"
+          }
+        },
+        "8bcd8c04-0061-45ee-838f-e816b7e12bfa": {
+          "type": "use",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MANDY_ANVANDINGSOMARDEN_PARTNERMAT.png"
+          }
+        },
+        "2c87204f-c25f-4686-815a-e1958c9a6aa6": {
+          "type": "use",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mandy_pa_jobb.png"
+          }
+        },
+        "3d42b7f4-7997-4294-a417-24ce9362951c": {
+          "type": "use",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MANDY_ANVANDINGSOMARDEN_TAGGA.png"
+          }
+        }
+      },
+      "block_order": [
+        "cd85e9a6-3226-4179-9d0a-07438cb57ade",
+        "080f9e1a-ee76-49ce-8314-4cef9a5fc528",
+        "2c022c0c-23d8-4f41-8ac2-1cc34777748f",
+        "b39d0da8-c2c9-4ae9-942d-1d657ebd7316",
+        "621f604f-2568-4e96-8925-a74c4f258521",
+        "9c996b19-7e4a-4180-ae27-3931d358d172",
+        "8bcd8c04-0061-45ee-838f-e816b7e12bfa",
+        "2c87204f-c25f-4686-815a-e1958c9a6aa6",
+        "3d42b7f4-7997-4294-a417-24ce9362951c"
+      ],
+      "settings": {
+        "title": "Användningsområden",
+        "text": "<p>Vilka är vi att bestämma vilka användningsområden som finns!? Det är ju HELT och hållet upp till dig och vilka utmaningar du har där du behöver en extra skjuts. Oavsett vilka utmaningar du har så hjälper Mandy dig gärna på traven!<\/p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "usps",
+    "features",
+    "reviews",
+    "uses"
+  ]
+}

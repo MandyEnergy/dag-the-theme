@@ -1,0 +1,124 @@
+{% javascript %}
+    // Listen for clicks
+    document.addEventListener('click', function (event) {
+        
+        // Bail if not accordion toggler
+        if (!event.target.classList.contains('accordion-toggle-button')) return;
+
+        // Get the targeted panel
+        var panel = document.getElementById(event.target.getAttribute('aria-controls'));
+        
+        // The magic
+        if (panel.classList.contains('block')) {
+
+            // Hide
+            panel.classList.remove('block');
+            panel.classList.add('hidden');
+            panel.setAttribute('aria-expanded', 'false');
+
+            event.target.classList.remove('active');
+ 
+            return;
+
+        } else {
+
+            // Show
+            panel.classList.remove('hidden');
+            panel.classList.add('block');
+            panel.setAttribute('aria-expanded', 'true');
+
+            event.target.classList.add('active');
+
+            return;
+
+        }
+
+    })
+{% endjavascript %}
+
+{%- style -%}
+  .active .arrow {
+    transform: rotate(90deg);
+  }
+{%- endstyle -%}
+
+<section id="section-{{ section.id }}" class="py-20">
+    <div class="accordion max-w-screen-2xl mx-auto flex flex-col px-5">
+        <header>
+            <h2>{{ section.settings.title }}</h2>
+            <div class="with-rich-text">
+                {{ section.settings.text }}
+            </div>
+        </header>
+        {% for block in section.blocks %}
+            {% case block.type %}
+            {% when 'panel' %}
+                <div class="panel border-b border-gray-300" {{ block.shopify_attributes }}>
+                    <h3 class="mt-4">
+                        <button class="accordion-toggle-button w-full flex justify-between items-center" aria-controls="accordion-panel-{{ block.id }}">
+                            {{ block.settings.title }}
+                            <span class="arrow">></span>
+                        </button>
+                    </h3>
+                    <div id="accordion-panel-{{ block.id }}" class="accordion-panel with-rich-text hidden" aria-expanded="false">
+                        {{ block.settings.text }}
+                    </div>
+                </div>
+            {% endcase %}
+        {% endfor %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Accordion",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Ingress under titel"
+    }
+  ],
+  "max_blocks": 9,
+  "blocks": [
+     {
+       "name": "Panel",
+       "type": "panel",
+       "settings": [
+         {
+           "type": "text",
+           "id": "title",
+           "label": "Panelrubrik"
+         },
+         {
+            "type": "richtext",
+            "id": "text",
+            "label": "Innehåll"
+          }
+       ]
+     }
+   ],
+   "presets": [
+    {
+      "name": "Accordion",
+      "settings": {
+        "title": "Accordion"
+      },
+      "blocks": [
+        {
+          "type": "panel"
+        },
+        {
+          "type": "panel"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

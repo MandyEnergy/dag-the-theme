@@ -1,0 +1,145 @@
+<footer class="border-t border-gray-200">
+  <div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 divide-gray-200">
+    <div class="lg:order-3 p-4 lg:p-6 xl:p-8" {{ block.shopify_attributes }}>
+      <div class="w-full max-w-xs mx-auto lg:w-auto lg:max-w-none lg:mx-0 py-2 lg:py-0">
+        <p class="text-sm xl:text-base mb-3">Tillsammans mot tröttheten. Prenumerera på vårt nyhetsbrev.</p> 
+        {% form 'customer' %}
+          {{ form.errors | default_errors }}
+          {% if form.posted_successfully? %}
+            <p class="bg-green-200 border border-green-300 text-green-700 w-full px-4 py-3 rounded-lg text-sm xl:text-base mb-2">E-postadress tillagd. Välkommen ♡</p>
+          {% else %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="relative mb-2">
+              <input
+                id="NewsletterForm--{{ section.id }}"
+                type="email"
+                name="contact[email]"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm xl:text-base"
+                value="{{ form.email }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                {% if form.errors %}
+                  autofocus
+                  aria-invalid="true"
+                  aria-describedby="Newsletter-error--{{ section.id }}"
+                {% elsif form.posted_successfully? %}
+                  aria-describedby="Newsletter-success--{{ section.id }}"
+                {% endif %}
+                placeholder="{{ 'newsletter.label' | t }}"
+                required
+              >
+              <button type="submit" name="commit" id="Subscribe" class="absolute right-4 top-[calc(50%-8.5px)]">
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+                  <path d="M9.54443 1.78125L16.2527 8.48955L9.06527 15.677" stroke="black"></path>
+                  <path d="M0.747191 8.43811L16.0804 8.43811" stroke="black"></path>
+                </svg>
+              </button>
+            </div>
+          {% endif %}
+        {% endform %}
+        <p class="text-xs text-slate-400">Genom att signa upp för vårt nyhetsbrev accepterar du vår personuppgiftspolicy.</p>
+      </div>
+    </div>
+    <div class="lg:order-2 lg:border-x lg:border-gray-200 lg:w-auto lg:max-w-none lg:mx-0 p-4 lg:p-6 xl:p-8">
+      <nav class="w-full max-w-xs mx-auto lg:w-auto lg:mx-0 py-2 lg:py-0">
+        <ul role="list" class="grid grid-rows-3 grid-flow-col">
+          {% for link in section.settings.menu.links %}
+            <li class="mb-3">
+              <a href="{{ link.url }}" class="text-slate-700 hover:text-primary-900 text-sm xl:text-base">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    <div class="lg:order-1 lg:w-auto lg:mx-0 p-4 lg:p-6 xl:p-8">
+      <div class="w-full max-w-xs mx-auto lg:w-auto lg:max-w-none lg:mx-0 flex flex-row py-2 lg:py-0">
+        <div class="flex flex-col w-1/2 mr-auto lg:mr-6">
+          <a href="{{ routes.root_url }}" class="mb-4">
+            {%- if section.settings.logo != blank -%} 
+              {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
+              {{ section.settings.logo | image_url: width: 104 | image_tag:
+                class: 'h-14 w-14 lg:h-16 lg:w-16 p-1.5',
+                widths: '88, 104',
+                alt: logo_alt
+              }} 
+            {%- else -%}
+              <span>{{ shop.name }}</span>
+            {%- endif -%}
+          </a>
+          <span class="text-sm xl:text-base">Med ♡ från STHLM</span>
+          <span class="text-sm xl:text-base">© Mandy energy AB 2022</span>
+        </div>
+        <div>
+          <ul role="list">
+            <li class="mb-2">
+              <a href="mailto:hello@mandyenergy.com" class="inline-flex items-baseline text-sm xl:text-base">
+                E-posta oss
+                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                  <path d="M1.92944 1L6.24466 1V5.62024" stroke="#000000"></path>
+                  <path d="M1.24122 5.96732L6.17289 1.03906" stroke="#000000"></path> 
+                </svg>
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="https://www.instagram.com/mandyenergy/" target="_blank" class="inline-flex items-baseline text-sm xl:text-base">
+                Instagram
+                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                  <path d="M1.92944 1L6.24466 1V5.62024" stroke="#000000"></path>
+                  <path d="M1.24122 5.96732L6.17289 1.03906" stroke="#000000"></path>
+                </svg>
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="https://www.facebook.com/mandyenergy" target="_blank" class="inline-flex items-baseline text-sm xl:text-base">
+                Facebook
+                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                  <path d="M1.92944 1L6.24466 1V5.62024" stroke="#000000"></path>
+                  <path d="M1.24122 5.96732L6.17289 1.03906" stroke="#000000"></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="{{ routes.root_url }}pages/contact" class="inline-flex items-baseline text-sm xl:text-base">
+                Fler kontaktvägar
+                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                  <path d="M1.92944 1L6.24466 1V5.62024" stroke="#000000"></path>
+                  <path d="M1.24122 5.96732L6.17289 1.03906" stroke="#000000"></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logotyp i footer"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 100,
+      "unit": "px",
+      "label": "Anpassad logotypbredd"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Footer meny"
+    }
+  ]
+}
+{% endschema %}

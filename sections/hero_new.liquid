@@ -1,0 +1,61 @@
+<section id="Hero-{{ section.id }}" class="">
+  <div class="grid grid-cols-1 md:grid-cols-2 divide-y-8 md:divide-y-0 md:divide-x-8 divide-gray-100 border-b-8 border-gray-100">
+    <div class="relative pt-[100%]">
+      <div class="absolute inset-0">
+        <div class="px-11 max-w-screen-sm mx-auto pt-11 lg:pt-14 xl:pt-16">
+          <h1 class="">Som energidryck,<br /> fast brustablett.</h1>
+          <p class="text-lg mb-4">Energi för allt du tar dig för. En Mandy innehåller <span class="text-primary-900 underline underline-offset-4">200 mg koffein</span>, är full på vitaminer (vitamin C, B1, B2, B6, B12 samt niacin) och är helt sockerfri.</p>
+          <ul class="bg-gray-100 rounded-lg inline-flex divide-x divide-gray-200 mb-4">
+            <li class="p-4">
+              <span class="block uppercase text-primary-900 font-normal font-fredoka-one">200 mg</span>
+              <span class="block uppercase text-primary-400 font-normal font-fredoka-one">Fri frakt</span>
+            </li>
+            <li class="p-4">
+              <span class="block uppercase text-primary-900 font-normal font-fredoka-one">200 mg</span>
+              <span class="block uppercase text-primary-400 font-normal font-fredoka-one">Betala säkert</span>
+            </li>
+            <li class="p-4">
+              <span class="block uppercase text-primary-900 font-normal font-fredoka-one">200 mg</span>
+              <span class="block uppercase text-primary-400 font-normal font-fredoka-one">Snabba leveranser</span>
+            </li>
+          </ul>
+          <a href="" class="button primary small items-center inline-flex">
+            Köp
+            <svg aria-hidden="true" class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="">1
+    </div>
+  </div>
+</section>
+  {%- if section.settings.image != blank -%}
+    {{ section.settings.image | image_url: width: 500 | image_tag:
+      alt: 'Bild på brustablatten och en flaska fyll med Mandy',
+      class: 'rounded-xl shadow-xl mx-auto lg:mx-0',
+      sizes: '(min-width:1023px) 500px,
+              (min-width:675px) 400px,
+              calc(100vw-2rem)',
+      widths: '500, 400, 300'
+    }}
+  {% else %}
+    <div class="bg-gray-200 border border-gray-400 inline-flex items-center justify-center">
+      {{ 'image' | placeholder_svg_tag: 'w-full h-full' }}
+    </div>
+  {%- endif -%}
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero bild"
+    }
+  ]
+}
+{% endschema %}

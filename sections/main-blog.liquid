@@ -1,0 +1,236 @@
+{%- paginate blog.articles by 6 -%}
+  <section class="">
+    <div class="max-w-screen-2xl mx-auto px-4 py-1">
+      {% render 'breadcrumbs' %}
+    </div>
+    <div class="max-w-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto py-16 px-4">
+      <header class="mb-12">
+        <h1 class="mb-2"><span class="normal-case text-slate-800">Välkommen till</span> <br/><span class="text-primary-900">{{ blog.title | escape }}</span></h1>
+        <p class="text-lg max-w-sm">Här bjuder vi på artiklar om koffein, hälsa och tips för att klara vardagen.</p>
+      </header>
+      <div class="mb-12">
+        <h2 class="text-base">De mest lästa inläggen</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="#" class="relative bg-white drop-shadow-2xl rounded-xl w-full pt-[150%] hover:transition-transform hover:scale-105">
+            <div class="absolute inset-0 w-full h-full bg-secondary-600 rounded-xl">
+              {{ 'image' | placeholder_svg_tag: '' }}
+            </div>
+            <div class="absolute left-0 bottom-0 right-0 p-4 lg:p-6 bg-gradient-to-t from-black/20 via-black/20 bg-opacity-20 rounded-b-xl text-white">
+              <h3 class="text-white">Blir man verkligen piggare av koffein? En genomgående undersökning.</h3>
+              Taggad med <span class="underline hover:no-underline">#energi</span>, <span class="underline hover:no-underline">#koffein</span>, <span class="underline hover:no-underline">#effekt</span>
+              den <time datetime="">22 feb, 2023</time>.
+            </div>
+          </a>
+          <a href="#" class="relative bg-white drop-shadow-2xl rounded-xl w-full pt-[150%] hover:transition-transform hover:scale-105">
+            <div class="absolute inset-0 w-full h-full bg-secondary-600 rounded-xl">
+              {{ 'image' | placeholder_svg_tag: '' }}
+            </div>
+            <div class="absolute left-0 bottom-0 right-0 p-4 lg:p-6 bg-gradient-to-t from-black/20 via-black/20 bg-opacity-20 rounded-b-xl text-white">
+              <h3 class="text-white">Blir man verkligen piggare av koffein? En genomgående undersökning.</h3>
+              Taggad med <span class="underline hover:no-underline">#energi</span>, <span class="underline hover:no-underline">#koffein</span>, <span class="underline hover:no-underline">#effekt</span>
+              den <time datetime="">22 feb, 2023</time>.
+            </div>
+          </a>
+          <a href="#" class="relative bg-white drop-shadow-2xl rounded-xl w-full pt-[150%] hover:transition-transform hover:scale-105">
+            <div class="absolute inset-0 w-full h-full bg-secondary-600 rounded-xl">
+              {{ 'image' | placeholder_svg_tag: '' }}
+            </div>
+            <div class="absolute left-0 bottom-0 right-0 p-4 lg:p-6 bg-gradient-to-t from-black/20 via-black/20 bg-opacity-20 rounded-b-xl text-white">
+              <h3 class="text-white">Blir man verkligen piggare av koffein? En genomgående undersökning.</h3>
+              Taggad med <span class="underline hover:no-underline">#energi</span>, <span class="underline hover:no-underline">#koffein</span>, <span class="underline hover:no-underline">#effekt</span>
+              den <time datetime="">22 feb, 2023</time>.
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="pt-16">
+        <h2 class="mb-0">Alla artiklar</h2>
+        <div class="flex flex-col divide-y divide-gray-200">
+          <article class="py-10">
+            <h3 class="mb-3">Blir man verkligen piggare av koffein? Undersökning.</h3>
+            <footer class="mb-4 flex flex-row flex-wrap">
+              <div class="flex mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20" fill="currentColor" class="mr-2"><path d="M480 658q-17 0-29.5-12.5T438 616q0-17 12.5-29.5T480 574q17 0 29.5 12.5T522 616q0 17-12.5 29.5T480 658Zm-160 0q-17 0-29.5-12.5T278 616q0-17 12.5-29.5T320 574q17 0 29.5 12.5T362 616q0 17-12.5 29.5T320 658Zm320 0q-17 0-29.5-12.5T598 616q0-17 12.5-29.5T640 574q17 0 29.5 12.5T682 616q0 17-12.5 29.5T640 658ZM480 818q-17 0-29.5-12.5T438 776q0-17 12.5-29.5T480 734q17 0 29.5 12.5T522 776q0 17-12.5 29.5T480 818Zm-160 0q-17 0-29.5-12.5T278 776q0-17 12.5-29.5T320 734q17 0 29.5 12.5T362 776q0 17-12.5 29.5T320 818Zm320 0q-17 0-29.5-12.5T598 776q0-17 12.5-29.5T640 734q17 0 29.5 12.5T682 776q0 17-12.5 29.5T640 818ZM204 976q-34.65 0-59.325-24.675Q120 926.65 120 892V344q0-34.65 24.675-59.325Q169.35 260 204 260h32v-42q0-17 12.5-29.5T278 176q17 0 29.5 12.5T320 218v42h320v-42q0-17 12.5-29.5T682 176q17 0 29.5 12.5T724 218v42h32q34.65 0 59.325 24.675Q840 309.35 840 344v548q0 34.65-24.675 59.325Q790.65 976 756 976H204Zm0-84h552V498H204v394Zm0-478h552v-70H204v70Zm0 0v-70 70Z"/></svg>
+                <time datetime="">22 feb, 2023.</time>
+              </div>
+              <ul class="flex">
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20" fill="currentColor" class="mr-2"><path d="m161 881-37-15q-30-13-40.5-44.5T87 760l74-161v282Zm155 90q-33 0-56.5-23.5T236 891V645l108 300q3 8 6.5 13.5T359 971h-43Zm209 0q-33 13-64.5-2.5T417 919L240 438q-13-33 2-65.5t49-44.5l298-108q33-13 64.5 3t44.5 49l177 482q12 34-3 65.5T824 863L525 971Zm-87-472q17 0 29.5-12.5T480 457q0-17-12.5-29.5T438 415q-17 0-29.5 12.5T396 457q0 17 12.5 29.5T438 499Zm58 393 298-109-176-484-299 109 177 484ZM319 408l299-109-299 109Z"/></svg>
+                </li>
+                <li><span class="underline hover:no-underline mr-2">#energi</span></li>
+                <li><span class="underline hover:no-underline mr-2">#koffein</span></li>
+                <li><span class="underline hover:no-underline">#vitaminer</span></li>
+              </ul>
+            </footer>
+            <p class="mb-4 text-lg">Koffein är en av världens mest konsumerade stimulerande medel. Koffein kan på kort sikt motverka trötthet och ge en känsla av att det går lättare att fokusera på uppgifter, men för stora intag kan ge illamående, hjärtklappning, muskeldarrningar och sömnproblem.</p>
+            <a href="#" class="text-primary-700 font-fredoka-one border-b-2 border-primary-700 hover:border-transparent">Fortsätt läsa ...</a>
+          </article>
+          <article class="py-10">
+            <h3 class="mb-3">Blir man verkligen piggare av koffein? Undersökning.</h3>
+            <footer class="mb-4 flex flex-row flex-wrap">
+              <div class="flex mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20" fill="currentColor" class="mr-2"><path d="M480 658q-17 0-29.5-12.5T438 616q0-17 12.5-29.5T480 574q17 0 29.5 12.5T522 616q0 17-12.5 29.5T480 658Zm-160 0q-17 0-29.5-12.5T278 616q0-17 12.5-29.5T320 574q17 0 29.5 12.5T362 616q0 17-12.5 29.5T320 658Zm320 0q-17 0-29.5-12.5T598 616q0-17 12.5-29.5T640 574q17 0 29.5 12.5T682 616q0 17-12.5 29.5T640 658ZM480 818q-17 0-29.5-12.5T438 776q0-17 12.5-29.5T480 734q17 0 29.5 12.5T522 776q0 17-12.5 29.5T480 818Zm-160 0q-17 0-29.5-12.5T278 776q0-17 12.5-29.5T320 734q17 0 29.5 12.5T362 776q0 17-12.5 29.5T320 818Zm320 0q-17 0-29.5-12.5T598 776q0-17 12.5-29.5T640 734q17 0 29.5 12.5T682 776q0 17-12.5 29.5T640 818ZM204 976q-34.65 0-59.325-24.675Q120 926.65 120 892V344q0-34.65 24.675-59.325Q169.35 260 204 260h32v-42q0-17 12.5-29.5T278 176q17 0 29.5 12.5T320 218v42h320v-42q0-17 12.5-29.5T682 176q17 0 29.5 12.5T724 218v42h32q34.65 0 59.325 24.675Q840 309.35 840 344v548q0 34.65-24.675 59.325Q790.65 976 756 976H204Zm0-84h552V498H204v394Zm0-478h552v-70H204v70Zm0 0v-70 70Z"/></svg>
+                <time datetime="">22 feb, 2023.</time>
+              </div>
+              <ul class="flex">
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20" fill="currentColor" class="mr-2"><path d="m161 881-37-15q-30-13-40.5-44.5T87 760l74-161v282Zm155 90q-33 0-56.5-23.5T236 891V645l108 300q3 8 6.5 13.5T359 971h-43Zm209 0q-33 13-64.5-2.5T417 919L240 438q-13-33 2-65.5t49-44.5l298-108q33-13 64.5 3t44.5 49l177 482q12 34-3 65.5T824 863L525 971Zm-87-472q17 0 29.5-12.5T480 457q0-17-12.5-29.5T438 415q-17 0-29.5 12.5T396 457q0 17 12.5 29.5T438 499Zm58 393 298-109-176-484-299 109 177 484ZM319 408l299-109-299 109Z"/></svg>
+                </li>
+                <li><span class="underline hover:no-underline mr-2">#energi</span></li>
+                <li><span class="underline hover:no-underline mr-2">#koffein</span></li>
+                <li><span class="underline hover:no-underline">#vitaminer</span></li>
+              </ul>
+            </footer>
+            <p class="mb-4 text-lg">Koffein är en av världens mest konsumerade stimulerande medel. Koffein kan på kort sikt motverka trötthet och ge en känsla av att det går lättare att fokusera på uppgifter, men för stora intag kan ge illamående, hjärtklappning, muskeldarrningar och sömnproblem.</p>
+            <a href="#" class="text-primary-700 font-fredoka-one border-b-2 border-primary-700 hover:border-transparent">Fortsätt läsa ...</a>
+          </article>
+          <article class="py-10">
+            <h3 class="mb-3">Blir man verkligen piggare av koffein? Undersökning.</h3>
+            <footer class="mb-4 flex flex-row flex-wrap">
+              <div class="flex mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20" fill="currentColor" class="mr-2"><path d="M480 658q-17 0-29.5-12.5T438 616q0-17 12.5-29.5T480 574q17 0 29.5 12.5T522 616q0 17-12.5 29.5T480 658Zm-160 0q-17 0-29.5-12.5T278 616q0-17 12.5-29.5T320 574q17 0 29.5 12.5T362 616q0 17-12.5 29.5T320 658Zm320 0q-17 0-29.5-12.5T598 616q0-17 12.5-29.5T640 574q17 0 29.5 12.5T682 616q0 17-12.5 29.5T640 658ZM480 818q-17 0-29.5-12.5T438 776q0-17 12.5-29.5T480 734q17 0 29.5 12.5T522 776q0 17-12.5 29.5T480 818Zm-160 0q-17 0-29.5-12.5T278 776q0-17 12.5-29.5T320 734q17 0 29.5 12.5T362 776q0 17-12.5 29.5T320 818Zm320 0q-17 0-29.5-12.5T598 776q0-17 12.5-29.5T640 734q17 0 29.5 12.5T682 776q0 17-12.5 29.5T640 818ZM204 976q-34.65 0-59.325-24.675Q120 926.65 120 892V344q0-34.65 24.675-59.325Q169.35 260 204 260h32v-42q0-17 12.5-29.5T278 176q17 0 29.5 12.5T320 218v42h320v-42q0-17 12.5-29.5T682 176q17 0 29.5 12.5T724 218v42h32q34.65 0 59.325 24.675Q840 309.35 840 344v548q0 34.65-24.675 59.325Q790.65 976 756 976H204Zm0-84h552V498H204v394Zm0-478h552v-70H204v70Zm0 0v-70 70Z"/></svg>
+                <time datetime="">22 feb, 2023.</time>
+              </div>
+              <ul class="flex">
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20" fill="currentColor" class="mr-2"><path d="m161 881-37-15q-30-13-40.5-44.5T87 760l74-161v282Zm155 90q-33 0-56.5-23.5T236 891V645l108 300q3 8 6.5 13.5T359 971h-43Zm209 0q-33 13-64.5-2.5T417 919L240 438q-13-33 2-65.5t49-44.5l298-108q33-13 64.5 3t44.5 49l177 482q12 34-3 65.5T824 863L525 971Zm-87-472q17 0 29.5-12.5T480 457q0-17-12.5-29.5T438 415q-17 0-29.5 12.5T396 457q0 17 12.5 29.5T438 499Zm58 393 298-109-176-484-299 109 177 484ZM319 408l299-109-299 109Z"/></svg>
+                </li>
+                <li><span class="underline hover:no-underline mr-2">#energi</span></li>
+                <li><span class="underline hover:no-underline mr-2">#koffein</span></li>
+                <li><span class="underline hover:no-underline">#vitaminer</span></li>
+              </ul>
+            </footer>
+            <p class="mb-4 text-lg">Koffein är en av världens mest konsumerade stimulerande medel. Koffein kan på kort sikt motverka trötthet och ge en känsla av att det går lättare att fokusera på uppgifter, men för stora intag kan ge illamående, hjärtklappning, muskeldarrningar och sömnproblem.</p>
+            <a href="#" class="text-primary-700 font-fredoka-one border-b-2 border-primary-700 hover:border-transparent">Fortsätt läsa ...</a>
+          </article>
+        </div>
+        <div class="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="main-blog page-width section-{{ section.id }}-padding">
+
+    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+      {%- for article in blog.articles -%}
+        <div class="blog-articles__article article">
+          {%- render 'article-card',
+            article: article,
+            media_height: section.settings.image_height,
+            media_aspect_ratio: article.image.aspect_ratio,
+            show_image: section.settings.show_image,
+            show_date: section.settings.show_date,
+            show_author: section.settings.show_author,
+            show_excerpt: true 
+          -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      {%- render 'pagination', paginate: paginate -%}
+    {%- endif -%}
+  </div>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.main-blog.settings.layout.options__1.label"
+        },
+        {
+          "value": "collage",
+          "label": "t:sections.main-blog.settings.layout.options__2.label"
+        }
+      ],
+      "default": "collage",
+      "label": "t:sections.main-blog.settings.layout.label",
+      "info": "t:sections.main-blog.settings.layout.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-blog.settings.image_height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.main-blog.settings.image_height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.main-blog.settings.image_height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.main-blog.settings.image_height.options__4.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.main-blog.settings.image_height.label",
+      "info": "t:sections.main-blog.settings.image_height.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.main-blog.settings.show_author.label"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-blog.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,231 @@
+<style>
+
+.hero .container .ingredients h2 {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 .5rem;
+  padding: 0;
+}
+
+.hero .container .ingredients h2 .arrow {
+  position: absolute;
+  z-index: -1;
+  top: -200%;
+  left: 125%;
+  width: 10rem;
+  height: 10rem;
+}
+
+
+.hero .container .ingredients p {
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.hero .container .ingredients ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.hero .container .ingredients ul li {
+  padding: 1rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(7,81,86,.1);
+  display: flex; 
+  gap: 1.5rem;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.hero .container .ingredients ul li:hover {
+  background: rgba(7,81,86,.1);
+  box-shadow: 0 25px 25px rgb(0 0 0 / 0.15);
+}
+
+.hero .container .ingredients ul li .icon {
+  padding: 1rem;
+  line-height: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fredoka One";
+  width: 1rem;
+  height: 1rem;
+  background: rgba(7,81,86,1);
+  border-radius: 100%;
+  box-shadow: 0 2px 30px rgba(0,0,0,.2);
+  color: #FFD170;
+}
+
+.hero .container .ingredients ul li .icon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.hero .container .ingredients ul li .title {
+  display: block;
+  font-family: "Fredoka One";
+  font-size: 1.125rem;
+  margin-bottom: .25rem;
+}
+
+.hero .container .ingredients ul li .mass {
+  font-size: 1.125rem;
+}
+
+.hero .container .call-to-action h2 {
+  margin: 0 0 .5rem;
+}
+
+.hero .container .call-to-action p {
+  margin: 0 0 1.25rem;
+}
+
+.hero .container .call-to-action ul {
+  margin: 0 0 3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.hero .container .call-to-action ul li {
+  margin: 0;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(7,81,86,.1);
+}
+
+.hero .container .call-to-action ul li span {
+  font-size: 1.25rem;
+}
+
+.hero .container .call-to-action ul li:last-of-type {
+  border-bottom: 0;
+}
+
+
+.hero .container .call-to-action ul li .price {
+  font-family: "Fredoka One"
+}
+
+.hero .container .call-to-action .quote {
+  display: flex;
+  padding: 0 0 0 2rem;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  gap: 2rem;
+}
+
+.hero .container .call-to-action .quote blockquote {
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+  color: inherit;
+}
+}
+</style>
+
+<section id="Hero-{{ section.id }}" class="hero py-12 md:py-20 xl:py-24">
+  <h1 class="text-center mb-12 md:mb-20">Som energidryck,<br /> fast brustablett.</h1>
+  <div class="container flex flex-col gap-y-20 lg:flex-row justify-between lg:items-center lg:items-stretch">
+    <div class="rounded lg:order-2 lg:max-w-xs xl:max-w-md">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 500 | image_tag:
+          alt: 'Bild på brustablatten och en flaska fyll med Mandy',
+          class: 'rounded-xl shadow-xl mx-auto lg:mx-0',
+          sizes: '(min-width:1023px) 500px,
+                  (min-width:675px) 400px,
+                  calc(100vw-2rem)',
+          widths: '500, 400, 300'
+        }}
+      {% else %}
+        <div class="bg-gray-200 border border-gray-400 inline-flex items-center justify-center">
+          {{ 'image' | placeholder_svg_tag: 'w-full h-full' }}
+        </div>
+      {%- endif -%}
+    </div>
+    <div class="ingredients lg:order-1 lg:basis-1/5"> 
+      <h2>
+        Innehåll
+        <svg class="arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><g stroke-width="13" stroke="hsl(183.2,85.1%,13.1%)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M184.42327880859375 251.20183944702148Q809.4232788085938 70.20183944702148 528.4232788085938 595.2018394470215 " marker-end="url(#SvgjsMarker1350)"></path></g><defs><marker markerWidth="8" markerHeight="8" refX="4" refY="4" viewBox="0 0 8 8" orient="auto" id="SvgjsMarker1350"><polyline points="0,4 4,2 0,0" fill="none" stroke-width="1.3333333333333333" stroke="hsl(183.2,85.1%,13.1%)" stroke-linecap="round" transform="matrix(1,0,0,1,1.3333333333333333,2)" stroke-linejoin="round"></polyline></marker></defs></svg>
+      </h2>
+      <p class="lead">Energi för allt du tar dig för.</p>
+      <ul>
+        <li>
+          <div class="icon">
+          1
+          </div>
+          <div>
+            <span class="title">Koffein</span>
+            <span class="mass">200 mg.</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon">
+            2
+          </div>
+          <div>
+            <span class="title">Full på vitaminer</span>
+            <span class="mass">Vitamin C, B1, B2, B6 och B12 samt niacin.</span>
+          </div>
+        </li>
+        <li>
+          <div class="icon">
+           3
+          </div>
+          <div>
+            <span class="title">Helt sockerfri</span>
+            <span class="mass">Innehåller sötningsmedel.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="call-to-action lg:order-3 lg:basis-1/5">
+      <h2>Pris</h2> 
+      <p class="lead">Ett rör innehåller 20 stycken brustabletter.</p>
+      <ul>
+        <li>
+          <span class="price">99,00 kr</span>
+          <span class="unit">per rör</span>
+        </li>
+        <li>
+          <span class="price">4,95 kr</span>
+          <span class="unit">per brustablett</span>
+        </li>
+        <li>
+          <span class="price">149,00 kr</span>
+          <span class="unit">för flaskan</span>
+        </li>
+      </ul>
+      <div class="quote">
+        👋
+        <blockquote>"Hejdå tröttheten och hej energin"</blockquote>
+      </div>
+      <a href="{{ routes.root_url }}products/mandy-red-berries" class="button primary items-center flex">
+        Köp nu
+        <svg aria-hidden="true" class="ml-auto w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero bild"
+    }
+  ]
+}
+{% endschema %}

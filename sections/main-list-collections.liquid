@@ -1,0 +1,49 @@
+<section class="">
+  <header class="bg-white py-4 border-b border-gray-200">
+    <nav class="max-w-screen-2xl mx-auto px-4" role="navigation" aria-label="breadcrumbs">
+      <ol class="breadcrumbs__list uppercase text-sm text-slate-500 inline-flex">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="/">Hem</a>
+        </li>
+        <li class="breadcrumbs__item before:content-['/'] before:inline ml-2 mr-3">
+          <a class="breadcrumbs__link" href="{{ routes.collections_url }}" aria-current="page">Alla kollektioner</a>
+        </li>
+      </ol>
+    </nav>
+    <h1 class="max-w-screen-2xl mx-auto px-4 mb-0">Alla kollektioner</h1>
+  </header>
+  <ul
+    class="flex flex-col mx-auto"
+    role="list"
+  >
+    {%- for collection in collections -%}
+      <li class="group grid grid-cols-1 md:grid-cols-2">   
+        <div class="relative pt-[100%] md:group-[:nth-child(even)]:order-2">  
+          {{ collection.featured_image | image_url: width: 500 | image_tag:
+            alt: 'Bild på brustablatten och en flaska fyll med Mandy',
+            class: 'absolute top-0 left-0 w-full h-full',
+            sizes: '(min-width:1023px) 500px,
+                    (min-width:675px) 400px,
+                    calc(100vw-2rem)',
+            widths: '500, 400, 300'
+          }}
+        </div>
+        <div class="md:group-[:nth-child(even)]:order-1 p-4 flex items-center justify-center">
+          <div class="grow max-w-md">
+            <h2>{{ collection.title | escape }}</h2>
+            <div class="block mb-4">
+              {{ collection.description | escape }}
+            </div>
+            <a href="{{ collection.url }}" class="button primary small">Köp &raquo;</a>
+          </p>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{% schema %}
+{
+  "name": "Lista av produktserier",
+  "class": "section"
+}
+{% endschema %}
